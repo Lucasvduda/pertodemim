@@ -1,0 +1,67 @@
+# PertoDeMim: tudo com um comando.
+#   docker compose up --build api                 -> API + front em http://localhost:8080
+#   docker compose --profile demo up --build      -> API + simulador IoT + dashboard em http://localhost:8501
+#   docker compose --profile dados run --rm etl   (gera dados de exemplo e roda o ETL)
+# Segredos vêm do ambiente ou de um arquivo .env (copie o .env.example). Nada é gravado aqui.
+name: pertodemim
+
+services:
+  api:
+    build: ./area3_mvp/api
+    ports: ["8080:8080"]
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-rules}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      JWT_SECRET: ${JWT_SECRET:-dev-only-secret-troque-em-producao-0123456789abcdef}
+      IOT_KEY_SEED: ${IOT_KEY_SEED:-dev-only-iot-seed}
+      BRONZE_DIR: /data/bronze
+    volumes:
+      - bronze:/data/bronze
+    restart: unless-stopped
+
+  simulador:
+    profiles: ["demo"]
+    build: { context: ., dockerfile: area4_devops/Dockerfile.python }
+    working_dir: /app/area3_mvp/iot_mock
+    command: ["python", "simulador.py", "--api", "http://api:8080", "--cenario", "cenarios/${CENARIO:-ortopedista_ausente}.json", "--ciclos", "${CICLOS:-60}", "--intervalo", "${INTERVALO:-30}"]
+    environment:
+      IOT_KEY_SEED: ${IOT_KEY_SEED:-dev-only-iot-seed}
+    depends_on:
+      api: { condition: service_healthy }
+
+  gerar-exemplo:
+    profiles: ["dados", "demo"]
+    build: { context: ., dockerfile: area4_devops/Dockerfile.python }
+    command: ["python", "gerar_dados_exemplo.py"]
+    volumes:
+      - bronze:/app/area2_dados/bronze
+
+  etl:
+    profiles: ["dados", "demo"]
+    build: { context: ., dockerfile: area4_devops/Dockerfile.python }
+    command: ["python", "etl.py"]
+    volumes:
+      - bronze:/app/area2_dados/bronze
+      - silver:/app/area2_dados/silver
+      - gold:/app/area2_dados/gold
+    # o perfil demo gera dados de exemplo antes do ETL; para rodar só o ETL: docker compose --profile dados run --no-deps --rm etl
+    depends_on:
+      gerar-exemplo: { condition: service_completed_successfully }
+
+  dashboard:
+    profiles: ["demo"]
+    build: { context: ., dockerfile: area4_devops/Dockerfile.python }
+    command: ["streamlit", "run", "dashboard.py", "--server.port=8501", "--server.address=0.0.0.0", "--browser.gatherUsageStats=false"]
+    ports: ["8501:8501"]
+    volumes:
+      - silver:/app/area2_dados/silver:ro
+      - gold:/app/area2_dados/gold:ro
+    depends_on:
+      etl: { condition: service_completed_successfully }
+
+volumes:
+  bronze:
+  silver:
+  gold:

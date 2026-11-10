@@ -1,0 +1,17 @@
+GLOBAL SOLUTION 2026/2 - CitizenTech
+Projeto: PertoDeMim
+
+Grupo: <PREENCHER>
+Turma: 4ESOA
+
+Integrantes (nome e RM):
+  - <PREENCHER>
+  - <PREENCHER>
+
+Link do vídeo de pitch (YouTube, não listado ou público): <PREENCHER>
+Link do repositório (opcional): <PREENCHER>
+
+Como rodar: veja o README.md dentro do .zip (seção "Rodar a API e o simulador" e "Docker").
+O que é simulado: fila, presença de profissional, conexão dos sensores, demanda e impacto. As unidades e coordenadas são reais (CNES).
+
+Uso de IA generativa: <PREENCHER PELO GRUPO, com suas palavras e com verdade; este modelo deixa em branco de propósito>

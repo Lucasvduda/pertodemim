@@ -1,0 +1,9 @@
+{
+  "nome": "fila_longa",
+  "descricao": "As duas unidades mais próximas com ortopedia estão com fila muito grande (a espera pesa no ranking).",
+  "base": { "prob_presenca": 0.85, "fila_media": 5, "fila_desvio": 3, "latencia_ms": 150 },
+  "regras": [
+    { "quando": { "especialidade": "225270", "rank_distancia": [1, 2] }, "fila_fixa": 40 },
+    { "quando": { "especialidade": "225270", "rank_distancia": [1, 2, 3, 4] }, "presente": true }
+  ]
+}

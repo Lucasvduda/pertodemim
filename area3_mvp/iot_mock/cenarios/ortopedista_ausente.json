@@ -1,0 +1,11 @@
+{
+  "nome": "ortopedista_ausente",
+  "descricao": "Cenário da demonstração: o ortopedista da unidade mais próxima está ausente; a 2ª e a 3ª mais próximas têm ortopedista presente.",
+  "base": { "prob_presenca": 0.75, "fila_media": 6, "fila_desvio": 3, "latencia_ms": 150 },
+  "regras": [
+    { "descricao": "ortopedista da unidade mais próxima ausente",
+      "quando": { "especialidade": "225270", "rank_distancia": [1] }, "presente": false },
+    { "descricao": "2ª e 3ª mais próximas com ortopedista",
+      "quando": { "especialidade": "225270", "rank_distancia": [2, 3] }, "presente": true }
+  ]
+}

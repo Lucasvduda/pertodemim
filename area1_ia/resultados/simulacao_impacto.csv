@@ -1,0 +1,3 @@
+baseline,n,atendidos,viagens_perdidas_sem_app,perdidas_porque_nao_oferece,perdidas_porque_ausente,pct_viagens_perdidas,km_evitados,custo_evitado_reais,minutos_evitados_deslocamento,minutos_evitados_por_pessoa_atendida
+qualquer,1000,998,634,489,145,63.5,3069.3,3683.15,7366.3,7.38
+porta_aberta,1000,998,667,528,139,66.8,4518.0,5421.59,10843.2,10.86

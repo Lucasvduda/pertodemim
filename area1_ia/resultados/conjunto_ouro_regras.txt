@@ -1,0 +1,15 @@
+Avaliação da triagem no conjunto ouro, rótulo: regras
+frases: 40
+serviço: 100.0%
+especialidade: 100.0% (26/26)
+urgência exata: 92.5%
+urgência ±1 nível: 97.5%
+recall do vermelho: 100.0% (8/8)
+falsos vermelhos: 0
+caminhos usados: {'regras': 32, 'red_flag': 8}
+limites mínimos: todos atingidos
+
+Erros de urgência e especialidade:
+  urgência #11 'atraso menstrual e dor forte na barriga': esperado amarelo, obtido laranja
+  urgência #16 'nariz entupido e sinusite faz meses': esperado verde, obtido azul
+  urgência #40 'preciso de cesta básica para a família': esperado amarelo, obtido azul

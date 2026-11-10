@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb-${random.uuid};DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+  jpa:
+    show-sql: false
+
+app:
+  jwt:
+    secret: test-secret-test-secret-test-secret-123456
+  iot:
+    chave-semente: test-seed
+  seed:
+    habilitado: false
+  rate-limit:
+    triagem-por-minuto: 1000
+    login-por-minuto: 1000
+  llm:
+    provider: rules
+
+logging:
+  level:
+    root: WARN
+    br.com.pertodemim: INFO

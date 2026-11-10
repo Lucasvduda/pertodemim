@@ -1,0 +1,18 @@
+# Imagem única para as partes em Python: simulador IoT, gerador de dados, ETL e dashboard.
+# Contexto de build: a pasta pertodemim/ (veja o docker-compose.yml na raiz).
+FROM python:3.12.8-slim
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY area2_dados/requirements.txt /tmp/req-dados.txt
+COPY area3_mvp/iot_mock/requirements.txt /tmp/req-iot.txt
+RUN pip install -r /tmp/req-dados.txt -r /tmp/req-iot.txt
+COPY area1_ia ./area1_ia
+COPY area2_dados ./area2_dados
+COPY area3_mvp/iot_mock ./area3_mvp/iot_mock
+RUN useradd --system --uid 10001 --create-home app \
+    && mkdir -p /app/area2_dados/bronze /app/area2_dados/silver /app/area2_dados/gold /app/area3_mvp/iot_mock/buffer \
+    && chown -R app:app /app
+USER 10001
+WORKDIR /app/area2_dados
+EXPOSE 8501
+CMD ["python", "etl.py"]

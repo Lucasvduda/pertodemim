@@ -1,0 +1,41 @@
+id,texto,servico,cbo,urgencia
+1,caí da bicicleta e o pulso está inchado e dói muito,saude,225270,amarelo
+2,escorreguei no banho e acho que quebrei o quadril,saude,225270,laranja
+3,dor nas costas há meses que piora quando fico sentado,saude,225270,verde
+4,meu bebê de 3 meses está com febre,saude,225124,amarelo
+5,meu filho de 7 anos não para de tossir à noite,saude,225124,verde
+6,quero marcar a consulta de rotina da criança para pesar e medir,saude,225124,azul
+7,estou com 30 semanas de gravidez e sinto dor de cabeça forte e vejo luzes,saude,225250,laranja
+8,minha menstruação está muito atrasada e queria fazer exame,saude,225250,verde
+9,preciso trocar o DIU,saude,225250,azul
+10,sinto o peito apertado quando faço esforço,saude,225120,amarelo
+11,minha pressão está sempre alta 18 por 10,saude,225120,amarelo
+12,estou com o olho muito vermelho e secreção amarela,saude,225265,amarelo
+13,visão embaçada e vejo moscas voando,saude,225265,amarelo
+14,meu ouvido está entupido depois da piscina,saude,225275,verde
+15,dor de garganta forte e amígdalas com placas,saude,225275,amarelo
+16,coceira na pele que não passa e descama,saude,225135,verde
+17,apareceu uma mancha escura no braço,saude,225135,verde
+18,estou sem dormir há semanas muito angustiado e chorando à toa,saude,225133,verde
+19,tenho crises de pânico no ônibus,saude,225133,verde
+20,sangue na urina e dor no rim,saude,225285,amarelo
+21,dor de cabeça forte só de um lado com enjoo e a luz incomoda,saude,225112,amarelo
+22,meu dedo está formigando e dormente faz dias,saude,225112,verde
+23,estou resfriado com dor de garganta,saude,225125,verde
+24,to com febre e diarreia faz dois dias,saude,225125,amarelo
+25,quero renovar a receita do remédio de pressão,saude,225125,azul
+26,não tenho dor no peito nem falta de ar só quero fazer um check-up,saude,225130,azul
+27,meu vizinho caiu na rua e está desacordado,saude,,vermelho
+28,estou com falta de ar e os lábios roxos,saude,,vermelho
+29,levei um tiro,saude,,vermelho
+30,minha filha tomou veneno de rato,saude,,vermelho
+31,quero acabar com a minha vida,saude,,vermelho
+32,ela está tendo uma crise convulsiva,saude,,vermelho
+33,preciso renovar minha carteira de identidade,documento,,azul
+34,como faço para tirar o título de eleitor,documento,,azul
+35,preciso da segunda via do CPF,documento,,azul
+36,preciso de ajuda para pagar o aluguel estou desempregado,assistencia_social,,amarelo
+37,quero saber como pedir o BPC para minha avó,assistencia_social,,azul
+38,faltou comida e as crianças estão com fome,assistencia_social,,amarelo
+39,preciso de vaga em creche para meu filho,assistencia_social,,azul
+40,preciso de cadastro para receber auxílio do governo,assistencia_social,,azul

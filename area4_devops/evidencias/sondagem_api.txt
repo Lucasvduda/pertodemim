@@ -1,0 +1,28 @@
+Sondagem de segurança e robustez contra a API em execução (python area4_devops/sondagem_api.py), 10/11/2026
+
+OK    cadastro com nome contendo HTML status 201
+OK    login devolve token status 200
+OK    triagem sem token = 401 status 401
+OK    JWT adulterado = 401 status 401
+OK    JWT alg=none = 401 status 401
+OK    triagem sem consentimento = 400 status 400
+OK    texto de 501 caracteres = 400 status 400
+OK    JSON inválido = 400 sem stack trace status 400
+OK    corpo de 2 MB não derruba (4xx, não 5xx) status 400
+OK    lat/lon absurdos = 400 status 400
+OK    raio negativo = 400 status 400
+OK    raio gigante = 400 ou limitado status 400
+OK    painel de unidade inexistente = 404 status 404
+OK    id não numérico = 400 status 400
+OK    IoT com chave falsa = 401/403 status 401
+OK    IoT sem chave = 401 status 401
+OK    cabeçalhos de segurança ['X-Content-Type-Options', 'X-XSS-Protection', 'X-Frame-Options', 'Content-Security-Policy', 'Referrer-Policy']
+OK    actuator/env não exposto status 404
+OK    h2-console não exposto status 404
+OK    agendamentos sem token = 401 status 401
+OK    agendamento criado status 201
+OK    outro usuário não cancela (403/404) status 404
+OK    dono cancela (200/204) status 200
+OK    força bruta de login leva a 429 [401, 401, 401, 401, 401, 401, 401, 401, 429, 429, 429, 429, 429, 429]
+
+24/24 verificações ok

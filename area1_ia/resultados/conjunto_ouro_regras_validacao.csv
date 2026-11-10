@@ -1,0 +1,41 @@
+id,texto,esperado_servico,obtido_servico,esperado_cbo,obtido_cbo,esperado_urgencia,obtida_urgencia,caminho
+1,caí da bicicleta e o pulso está inchado e dói muito,saude,saude,225270,225125,amarelo,verde,regras
+2,escorreguei no banho e acho que quebrei o quadril,saude,saude,225270,225270,laranja,laranja,regras
+3,dor nas costas há meses que piora quando fico sentado,saude,saude,225270,225270,verde,azul,regras
+4,meu bebê de 3 meses está com febre,saude,saude,225124,225124,amarelo,amarelo,regras
+5,meu filho de 7 anos não para de tossir à noite,saude,saude,225124,225124,verde,verde,regras
+6,quero marcar a consulta de rotina da criança para pesar e medir,saude,saude,225124,225124,azul,azul,regras
+7,estou com 30 semanas de gravidez e sinto dor de cabeça forte e vejo luzes,saude,saude,225250,225250,laranja,verde,regras
+8,minha menstruação está muito atrasada e queria fazer exame,saude,saude,225250,225250,verde,verde,regras
+9,preciso trocar o DIU,saude,saude,225250,225250,azul,azul,regras
+10,sinto o peito apertado quando faço esforço,saude,saude,225120,225125,amarelo,verde,regras
+11,minha pressão está sempre alta 18 por 10,saude,saude,225120,225125,amarelo,verde,regras
+12,estou com o olho muito vermelho e secreção amarela,saude,saude,225265,225265,amarelo,amarelo,regras
+13,visão embaçada e vejo moscas voando,saude,saude,225265,225265,amarelo,verde,regras
+14,meu ouvido está entupido depois da piscina,saude,saude,225275,225275,verde,verde,regras
+15,dor de garganta forte e amígdalas com placas,saude,saude,225275,225275,amarelo,verde,regras
+16,coceira na pele que não passa e descama,saude,saude,225135,225135,verde,verde,regras
+17,apareceu uma mancha escura no braço,saude,saude,225135,225135,verde,verde,regras
+18,estou sem dormir há semanas muito angustiado e chorando à toa,saude,saude,225133,225125,verde,verde,regras
+19,tenho crises de pânico no ônibus,saude,saude,225133,225133,verde,verde,regras
+20,sangue na urina e dor no rim,saude,saude,225285,225285,amarelo,amarelo,regras
+21,dor de cabeça forte só de um lado com enjoo e a luz incomoda,saude,saude,225112,225112,amarelo,amarelo,regras
+22,meu dedo está formigando e dormente faz dias,saude,saude,225112,225112,verde,verde,regras
+23,estou resfriado com dor de garganta,saude,saude,225125,225125,verde,verde,regras
+24,to com febre e diarreia faz dois dias,saude,saude,225125,225125,amarelo,verde,regras
+25,quero renovar a receita do remédio de pressão,saude,saude,225125,225130,azul,azul,regras
+26,não tenho dor no peito nem falta de ar só quero fazer um check-up,saude,saude,225130,225130,azul,azul,regras
+27,meu vizinho caiu na rua e está desacordado,saude,saude,,,vermelho,vermelho,red_flag
+28,estou com falta de ar e os lábios roxos,saude,saude,,,vermelho,vermelho,red_flag
+29,levei um tiro,saude,saude,,,vermelho,vermelho,red_flag
+30,minha filha tomou veneno de rato,saude,saude,,,vermelho,vermelho,red_flag
+31,quero acabar com a minha vida,saude,saude,,,vermelho,vermelho,red_flag
+32,ela está tendo uma crise convulsiva,saude,saude,,,vermelho,vermelho,red_flag
+33,preciso renovar minha carteira de identidade,documento,documento,,,azul,azul,regras
+34,como faço para tirar o título de eleitor,documento,documento,,,azul,azul,regras
+35,preciso da segunda via do CPF,documento,documento,,,azul,azul,regras
+36,preciso de ajuda para pagar o aluguel estou desempregado,assistencia_social,assistencia_social,,,amarelo,amarelo,regras
+37,quero saber como pedir o BPC para minha avó,assistencia_social,assistencia_social,,,azul,azul,regras
+38,faltou comida e as crianças estão com fome,assistencia_social,assistencia_social,,,amarelo,amarelo,regras
+39,preciso de vaga em creche para meu filho,assistencia_social,assistencia_social,,,azul,azul,regras
+40,preciso de cadastro para receber auxílio do governo,assistencia_social,assistencia_social,,,azul,azul,regras

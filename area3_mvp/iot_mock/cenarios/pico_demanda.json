@@ -1,0 +1,8 @@
+{
+  "nome": "pico_demanda",
+  "descricao": "Pico de demanda (ex.: surto de dengue): filas altas em todas as unidades, UPAs e hospitais ainda mais cheios, latência maior.",
+  "base": { "prob_presenca": 0.7, "fila_media": 25, "fila_desvio": 8, "latencia_ms": 400 },
+  "regras": [
+    { "quando": { "tipo_unidade": ["UPA", "HOSPITAL", "PRONTO_SOCORRO"] }, "fila": { "media": 45, "desvio": 10 } }
+  ]
+}

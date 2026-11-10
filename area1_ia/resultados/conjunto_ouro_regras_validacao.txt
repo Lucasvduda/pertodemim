@@ -1,0 +1,25 @@
+Avaliação da triagem no conjunto ouro, rótulo: regras_validacao
+frases: 40
+serviço: 100.0%
+especialidade: 80.8% (21/26)
+urgência exata: 80.0%
+urgência ±1 nível: 97.5%
+recall do vermelho: 100.0% (6/6)
+falsos vermelhos: 0
+caminhos usados: {'regras': 34, 'red_flag': 6}
+limites mínimos: todos atingidos
+
+Erros de urgência e especialidade:
+  urgência #1 'caí da bicicleta e o pulso está inchado e dói muito': esperado amarelo, obtido verde
+  especialidade #1 'caí da bicicleta e o pulso está inchado e dói muito': esperado 225270, obtido 225125
+  urgência #3 'dor nas costas há meses que piora quando fico sentado': esperado verde, obtido azul
+  urgência #7 'estou com 30 semanas de gravidez e sinto dor de cabeça forte e vejo luzes': esperado laranja, obtido verde
+  urgência #10 'sinto o peito apertado quando faço esforço': esperado amarelo, obtido verde
+  especialidade #10 'sinto o peito apertado quando faço esforço': esperado 225120, obtido 225125
+  urgência #11 'minha pressão está sempre alta 18 por 10': esperado amarelo, obtido verde
+  especialidade #11 'minha pressão está sempre alta 18 por 10': esperado 225120, obtido 225125
+  urgência #13 'visão embaçada e vejo moscas voando': esperado amarelo, obtido verde
+  urgência #15 'dor de garganta forte e amígdalas com placas': esperado amarelo, obtido verde
+  especialidade #18 'estou sem dormir há semanas muito angustiado e chorando à toa': esperado 225133, obtido 225125
+  urgência #24 'to com febre e diarreia faz dois dias': esperado amarelo, obtido verde
+  especialidade #25 'quero renovar a receita do remédio de pressão': esperado 225125, obtido 225130

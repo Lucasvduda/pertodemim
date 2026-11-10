@@ -1,0 +1,24 @@
+# segredos
+.env
+*.pem
+*.key
+credenciais*
+# build / caches
+target/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+# dados gerados (reproduzíveis com gerar_dados_exemplo.py, simulador e etl.py)
+area2_dados/bronze/
+area2_dados/silver/
+area2_dados/gold/
+area3_mvp/iot_mock/buffer/
+# logs e saídas do entregável
+*.log
+entrega/*.zip
+entrega/saida/
+# IDE
+.idea/
+.vscode/

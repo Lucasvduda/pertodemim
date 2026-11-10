@@ -1,0 +1,24 @@
+frases=40 servico=100.0% especialidade=80.8% (21/26) urgencia_exata=55.0% urgencia_+-1=92.5% recall_vermelho=100.0% (8/8) falsos_vermelhos=0
+urgência #2 'cai da escada e meu braço ta torto axo q quebrou': esperado laranja, obtido verde
+especialidade #2 'cai da escada e meu braço ta torto axo q quebrou': esperado 225270, obtido 225125
+especialidade #6 'meu fio ta c febre alta desde ontem': esperado 225124, obtido 225125
+urgência #8 'preciso levar meu filho para tomar vacina': esperado azul, obtido verde
+urgência #10 'quero fazer o preventivo': esperado azul, obtido verde
+urgência #11 'atraso menstrual e dor forte na barriga': esperado amarelo, obtido laranja
+urgência #12 'meu coração dispara quando subo escada': esperado amarelo, obtido verde
+especialidade #12 'meu coração dispara quando subo escada': esperado 225120, obtido 225125
+urgência #13 'introu cisco no olho e está vermelho e ardendo': esperado amarelo, obtido verde
+urgência #14 'não enxergo bem de longe preciso de óculos': esperado verde, obtido laranja
+urgência #15 'dor de ouvido forte e saindo secreção': esperado amarelo, obtido verde
+urgência #16 'nariz entupido e sinusite faz meses': esperado verde, obtido azul
+urgência #18 'tenho uma pinta que cresceu e sangra': esperado amarelo, obtido verde
+especialidade #20 'me sinto muito triste e sem vontade de nada': esperado 225133, obtido 225125
+urgência #21 'dor ao urinar e vontade toda hora': esperado amarelo, obtido verde
+urgência #23 'to c febre e dor no corpo': esperado amarelo, obtido verde
+urgência #25 'dor de barriga e enjoo desde ontem': esperado amarelo, obtido verde
+especialidade #26 'quero fazer exames de rotina e check-up': esperado 225125, obtido 225130
+urgência #35 'perdi meu RG e preciso da segunda via': esperado verde, obtido azul
+urgência #36 'preciso tirar o cartão SUS': esperado verde, obtido azul
+urgência #38 'quero me cadastrar no CadÚnico para o Bolsa Família': esperado verde, obtido azul
+urgência #39 'preciso de uma certidão de nascimento': esperado verde, obtido azul
+urgência #40 'preciso de cesta básica para a família': esperado amarelo, obtido azul

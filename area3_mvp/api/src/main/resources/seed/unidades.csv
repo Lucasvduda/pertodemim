@@ -1,0 +1,52 @@
+cnes,nome,tipo,bairro,regiao,lat,lon,atende_sus,turno
+466611,Upa Mooca Iii Dom Paulo Evaristo Arns,UPA,Belenzinho,Leste,-23.546659,-46.595067,true,diurno
+997730,Upa Dona Maria Antonieta Ferreira De Barros,UPA,Grajau,Sul,-23.749498,-46.690097,true,diurno
+2026961,Ubs Vila Heloisa,UBS,Vila Heloisa,Leste,-23.589701,-46.534819,true,manhã e tarde
+2027100,Ps Mun Dr Caetano Virgilio Netto,PRONTO_SOCORRO,Jad Pinheiros,Oeste,-23.584,-46.738,true,diurno
+2042827,Ama 24H Jardim Nordeste Dr Carlos Neder,UPA,Jardim Coimbra,Leste,-23.569061,-46.569886,true,diurno
+2069040,Pa Mun Dra Gloria Rodrigues Dos Santos Bonfim,UPA,Cidade Tiradentes,Leste,-23.60348,-46.39798,true,diurno
+2071495,Ps Mun Santana Lauro Ribas Braga,PRONTO_SOCORRO,Santana,Norte,-23.511943,-46.626408,true,diurno
+2075407,Upa Iii Dr Jose Mauro Del Roio Correa,UPA,Vila Maria Baixa,Leste,-23.517234,-46.577322,true,diurno
+2075423,Pa Mun Sao Mateus Ii,UPA,Cidade Sao Mateus,Leste,-23.610508,-46.479308,true,diurno
+2077450,Hosp Mun Pirituba Jose Soares Hungria,HOSPITAL,Pirituba,Oeste,-23.48556,-46.70873,true,diurno
+2077620,Hospital Geral Santa Marcelina De Itaim Paulista Sao Paulo,HOSPITAL,Itaim Paulista,Leste,-23.492423,-46.388981,true,diurno
+2079240,Hospital Geral Jesus Teixeira Da Costa Guaianases Sao Paulo,HOSPITAL,Jardim Sao Paulo,Leste,-23.556651,-46.400254,true,diurno
+2080346,Hosp Mun Dr Carmino Caricchio,HOSPITAL,Tatuape,Leste,-23.532877,-46.566377,true,diurno
+2081970,Hosp Mun Jabaquara Artur Ribeiro De Saboya,HOSPITAL,Jabaquara,Sul,-23.653639,-46.645046,true,diurno
+2082837,Upa Iii Lapa Prof Joao Catarin Mezomo,UPA,Vila Hamburguesa,Centro,-23.546,-46.637,true,diurno
+2084473,Hosp Mun Ignacio Proenca De Gouvea,HOSPITAL,Parque Da Mooca,Leste,-23.571697,-46.590099,true,diurno
+2088576,Hospital De Transp Do Est De Sp Euryclides De Jesus Zerbini,HOSPITAL,Jardim Paulista,Oeste,-23.561603,-46.688405,true,diurno
+2091755,Hospital Geral De Vila Penteado Dr Jose Pangella Sao Paulo,HOSPITAL,Jardim Iracema,Oeste,-23.489604,-46.698214,true,diurno
+2751887,Ubs Jardim Cliper Rocilda Soares Alves Silva,UBS,Parque Esmeralda,Sul,-23.72382,-46.706164,true,manhã e tarde
+2752093,Ps Mun Balneario Sao Jose,PRONTO_SOCORRO,Balneario Sao Jose,Sul,-23.770367,-46.724587,true,diurno
+2752107,Upa Santo Amaro Dr Jose Sylvio De Camargo,UPA,Santo Amaro,Sul,-23.651261,-46.70488,true,diurno
+2786737,Ubs Alto Da Riviera,UBS,Alto Da Riviera,Sul,-23.70004,-46.764348,true,24h/integral
+2787040,Ubs Fazenda Da Juta I,UBS,Fazenda Da Juta,Leste,-23.624886,-46.493467,true,manhã e tarde
+2787067,Ubs Gaivotas,UBS,Jardim Gaivotas,Sul,-23.732143,-46.666917,true,manhã e tarde
+2787091,Ubs Jardim Dos Eucaliptos Helio Moreira Salles,UBS,Jd Dos Eucaliptos,Leste,-23.600788,-46.508096,true,manhã e tarde
+2787121,Ubs Iguacu Maria Jose Mariano Da Silva,UBS,Vila Industrial,Leste,-23.582753,-46.559775,true,manhã e tarde
+2787172,Ubs Jardim Apuana Joao Koch,UBS,Jardim Apuana,Norte,-23.452473,-46.585669,true,manhã e tarde
+2787210,Ubs Jardim Boa Vista,UBS,Jardim Boa Vista,Oeste,-23.584,-46.79,true,24h/integral
+2787520,Ama Ubs Jardim Joamar,UBS,Jardim Joamar,Norte,-23.449924,-46.596762,true,24h/integral
+2787660,Ubs Jardim Panamericano,UBS,Jardim Panamericano,Norte,-23.45061,-46.732264,true,manhã e tarde
+2787857,Ubs Jardim Sinha,UBS,Parque Dos Bancarios,Leste,-23.593693,-46.511621,true,manhã e tarde
+2788020,Ubs Fazenda Da Juta Ii,UBS,Fazenda Da Juta,Leste,-23.6225,-46.487505,true,manhã e tarde
+2788306,Ubs Parque Edu Chaves,UBS,Parque Edu Chaves,Norte,-23.477569,-46.56866,true,manhã e tarde
+2878259,Upa Jardim Elisa Maria I,UPA,Conjunto Promorar Es,Norte,-23.455204,-46.683945,true,diurno
+4050169,Upa Perus Dr Luiz Antonio De Abreu Sampaio Doria,UPA,Perus,Norte,-23.400727,-46.747148,true,diurno
+4050320,Ps Mun Dr Alvaro Dino De Almeida,PRONTO_SOCORRO,Barra Funda,Centro,-23.531163,-46.652879,true,diurno
+5437156,Hospital Local De Sapopemba,HOSPITAL,Parque Santa Madalen,Sul,-23.579452,-46.649342,true,diurno
+5576989,Ama 12H Jardim Das Laranjeiras,UBS,Iguatemi,Leste,-23.596877,-46.439221,true,manhã e tarde
+5718368,Hosp Mun M Boi Mirim,HOSPITAL,Jardim Angela,Centro,-23.533394,-46.639973,true,diurno
+6133622,Upa Sacoma,UPA,Sacoma,Sul,-23.613498,-46.593838,true,diurno
+6143180,Ama 24H Engenheiro Goulart Dr Jose Pires,UPA,Engenheiro Goulart,Leste,-23.498,-46.519,true,diurno
+6156959,Ama 12H Jardim Peri Peri,UPA,Jd Peri Peri,Oeste,-23.586,-46.732,true,24h/integral
+6360890,Upa Jardim Icarai Quintana,UPA,Vila Sao Jose,Sul,-23.743846,-46.705725,true,diurno
+6728626,Ama Paraisopolis,UPA,Jardim Morumbi,Oeste,-23.616381,-46.720539,true,diurno
+7992890,Hosp Mun Capela Do Socorro,HOSPITAL,Jardim Das Imbuias,Sul,-23.730753,-46.713639,true,24h/integral
+8033420,Ubs Jardim Kioto Ignes Fontana Tatto,UBS,Jardim Kioto,Sul,-23.734077,-46.717193,true,24h/integral
+8047790,Ubs Vila Rubi,UBS,Parque Das Arvores,Sul,-23.727575,-46.692047,true,24h/integral
+9186492,Ubs Jardim Colombo,UBS,Jardim Colombo,Oeste,-23.601,-46.727,true,24h/integral
+9349898,Upa Vila Mariana,UPA,V Clementino,Sul,-23.596006,-46.642663,true,diurno
+9653988,Amb Espec Parelheiros,POLICLINICA,Jardim Novo Parelhei,Sul,-23.830116,-46.726992,true,manhã e tarde
+9971513,Upa Ermelino Matarazzo,UPA,Vila Paranagua,Leste,-23.499121,-46.473666,true,diurno

@@ -1,0 +1,6 @@
+{
+  "nome": "normal",
+  "descricao": "Dia comum: a maioria dos profissionais presente, filas moderadas, todas as unidades conectadas.",
+  "base": { "prob_presenca": 0.75, "fila_media": 6, "fila_desvio": 4, "latencia_ms": 150 },
+  "regras": []
+}

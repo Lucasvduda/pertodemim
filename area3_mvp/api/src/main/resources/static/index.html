@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PertoDeMim: orientação de saúde e serviços públicos para quem mais precisa. Não é diagnóstico.">
+  <title>PertoDeMim</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="pular" href="#principal">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <button class="marca" id="btn-inicio" type="button" aria-label="PertoDeMim, ir para o início">
+      <span class="marca-icone" aria-hidden="true">&#9679;</span> PertoDeMim
+    </button>
+    <nav class="menu" id="menu" aria-label="Navegação principal" hidden>
+      <button type="button" data-ir="triagem">Triagem</button>
+      <button type="button" data-ir="unidades">Unidades</button>
+      <button type="button" data-ir="agendamentos">Meus agendamentos</button>
+      <button type="button" id="btn-sair">Sair</button>
+    </nav>
+  </header>
+
+  <aside class="faixa-emergencia" role="note">
+    Em emergência, ligue <a href="tel:192"><strong>192 (SAMU)</strong></a>. Este aplicativo orienta, não faz diagnóstico.
+  </aside>
+
+  <main id="principal" tabindex="-1">
+    <div id="aviso" class="aviso" role="alert" hidden></div>
+
+    <!-- Entrar / cadastrar -->
+    <section id="tela-entrada" class="tela" hidden>
+      <h1>Atendimento perto de você</h1>
+      <p class="lead">Conte o que está acontecendo e veja qual unidade pública tem o profissional certo agora.</p>
+      <div class="cartoes">
+        <form id="form-login" class="cartao" novalidate>
+          <h2>Entrar</h2>
+          <label for="login-email">E-mail</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" required>
+          <label for="login-senha">Senha</label>
+          <input id="login-senha" name="senha" type="password" autocomplete="current-password" required>
+          <button class="primario" type="submit">Entrar</button>
+        </form>
+        <form id="form-cadastro" class="cartao" novalidate>
+          <h2>Criar conta</h2>
+          <label for="cad-nome">Nome</label>
+          <input id="cad-nome" name="nome" type="text" autocomplete="name" required minlength="2" maxlength="120">
+          <label for="cad-email">E-mail</label>
+          <input id="cad-email" name="email" type="email" autocomplete="email" required>
+          <label for="cad-senha">Senha (8 a 72 caracteres)</label>
+          <input id="cad-senha" name="senha" type="password" autocomplete="new-password" required minlength="8" maxlength="72">
+          <label class="linha-check">
+            <input id="cad-consent" name="consentimento" type="checkbox" required>
+            <span>Li e aceito o <button type="button" class="link" id="abrir-termo">termo de consentimento</button> (LGPD).</span>
+          </label>
+          <button class="primario" type="submit">Criar conta</button>
+        </form>
+      </div>
+      <dialog id="termo" aria-labelledby="termo-titulo">
+        <h2 id="termo-titulo">Termo de consentimento (LGPD)</h2>
+        <p>Usamos só o que você escreve na triagem e a sua região para indicar uma unidade. Dados de saúde são sensíveis (LGPD, art. 11):
+          antes de guardar, removemos CPF, telefone, e-mail, endereço e nome do texto. Esta é uma demonstração: o cadastro fica só neste servidor e some quando ele reinicia; o texto já anonimizado também é gravado em arquivo para as análises.</p>
+        <p>Não fazemos diagnóstico nem substituímos atendimento médico. Em emergência, ligue 192.</p>
+        <form method="dialog"><button class="primario">Entendi</button></form>
+      </dialog>
+    </section>
+
+    <!-- Triagem -->
+    <section id="tela-triagem" class="tela" hidden>
+      <h1>O que você precisa?</h1>
+      <form id="form-triagem" class="cartao" novalidate>
+        <label for="triagem-texto">Descreva com suas palavras (até 500 caracteres)</label>
+        <textarea id="triagem-texto" name="texto" rows="4" maxlength="500" required
+                  placeholder="Ex.: quebrei a perna, minha filha está com febre, preciso da segunda via do RG"></textarea>
+        <div class="contador" id="contador" aria-live="polite">0/500</div>
+        <div class="linha">
+          <button type="button" id="btn-local" class="secundario">Usar minha localização</button>
+          <span id="local-info" class="discreto">Sem localização: usando o centro de São Paulo.</span>
+        </div>
+        <label class="linha-check">
+          <input id="triagem-consent" type="checkbox" required>
+          <span>Concordo em enviar este texto para a triagem (LGPD). Não escreva CPF, telefone ou endereço.</span>
+        </label>
+        <button class="primario grande" type="submit" id="btn-triar">Ver o que fazer</button>
+      </form>
+    </section>
+
+    <!-- Emergência -->
+    <section id="tela-emergencia" class="tela emergencia" hidden>
+      <h1>Isto pode ser uma emergência</h1>
+      <p class="grande-texto" id="emerg-orientacao"></p>
+      <a id="emerg-ligar" class="botao-ligar" href="tel:192">Ligar 192</a>
+      <p class="discreto" id="emerg-aviso"></p>
+      <button type="button" class="secundario" data-ir="triagem">Voltar</button>
+    </section>
+
+    <!-- Resultado -->
+    <section id="tela-resultado" class="tela" hidden>
+      <h1>Resultado da triagem</h1>
+      <div class="cartao" id="resumo-triagem" aria-live="polite">
+        <div class="linha">
+          <span id="res-urgencia" class="selo"></span>
+          <strong id="res-especialidade"></strong>
+        </div>
+        <p id="res-orientacao"></p>
+        <p id="res-comparacao" class="comparacao" role="status" hidden></p>
+        <p id="res-pergunta" class="discreto" hidden></p>
+        <p class="discreto" id="res-aviso"></p>
+        <div class="linha">
+          <button type="button" class="secundario" id="btn-copiar">Copiar resumo para compartilhar</button>
+          <span id="copiado" class="discreto" role="status"></span>
+        </div>
+      </div>
+      <h2>Onde ir</h2>
+      <ol id="lista-unidades" class="lista-unidades"></ol>
+      <p id="sem-unidades" class="discreto" hidden>Nenhuma unidade encontrada neste raio.</p>
+    </section>
+
+    <!-- Unidades (sem triagem) -->
+    <section id="tela-unidades" class="tela" hidden>
+      <h1>Unidades perto de você</h1>
+      <form id="form-unidades" class="cartao" novalidate>
+        <label for="un-servico">Serviço</label>
+        <select id="un-servico">
+          <option value="saude">Saúde (especialidade)</option>
+          <option value="documento">Documentos</option>
+          <option value="assistencia_social">Assistência social</option>
+        </select>
+        <label for="un-esp" id="lbl-un-esp">Especialidade</label>
+        <select id="un-esp"></select>
+        <label for="un-raio">Raio (km)</label>
+        <input id="un-raio" type="number" min="1" max="200" value="40">
+        <button class="primario" type="submit">Buscar</button>
+      </form>
+      <ol id="lista-unidades-busca" class="lista-unidades"></ol>
+      <p id="sem-unidades-busca" class="discreto" hidden>Nenhuma unidade encontrada neste raio.</p>
+    </section>
+
+    <!-- Agendar -->
+    <section id="tela-agendar" class="tela" hidden>
+      <h1>Agendar</h1>
+      <div class="cartao">
+        <p><strong id="ag-unidade"></strong></p>
+        <p class="discreto" id="ag-servico"></p>
+        <label for="ag-data">Dia</label>
+        <input id="ag-data" type="date" required>
+        <div id="ag-horarios" class="grade-horarios" role="group" aria-label="Horários disponíveis"></div>
+        <p id="ag-vazio" class="discreto" hidden>Sem horários neste dia.</p>
+        <div class="linha">
+          <button type="button" class="primario" id="ag-confirmar" disabled>Confirmar agendamento</button>
+          <button type="button" class="secundario" id="ag-voltar">Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meus agendamentos -->
+    <section id="tela-agendamentos" class="tela" hidden>
+      <h1>Meus agendamentos</h1>
+      <ul id="lista-agendamentos" class="lista-agendamentos"></ul>
+      <p id="sem-agendamentos" class="discreto" hidden>Você ainda não tem agendamentos.</p>
+    </section>
+
+    <!-- Painel da unidade -->
+    <section id="tela-painel" class="tela" hidden>
+      <h1 id="painel-titulo">Painel da unidade</h1>
+      <p class="discreto">Dados simulados (sensores simulados). Atualiza a cada 10 segundos.</p>
+      <div class="cartao" id="painel-corpo" aria-live="polite"></div>
+      <button type="button" class="secundario" id="painel-voltar">Voltar</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>PertoDeMim · Global Solution FIAP 2026 · ODS 3 e 10 · Dados de unidades: CNES (amostra). Profissionais, fila e conexão são <strong>simulados</strong>.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

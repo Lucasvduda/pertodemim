@@ -1,0 +1,9 @@
+{
+  "nome": "posto_offline",
+  "descricao": "A unidade mais próxima com ortopedia perde a conexão (não envia nada): o heartbeat expira em 2 min e ela é rebaixada com aviso.",
+  "base": { "prob_presenca": 0.85, "fila_media": 5, "fila_desvio": 3, "latencia_ms": 150 },
+  "regras": [
+    { "quando": { "especialidade": "225270", "rank_distancia": [1] }, "offline": true },
+    { "quando": { "especialidade": "225270", "rank_distancia": [2, 3] }, "presente": true }
+  ]
+}

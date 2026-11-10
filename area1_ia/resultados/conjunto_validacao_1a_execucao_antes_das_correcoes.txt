@@ -1,0 +1,35 @@
+Avaliação da triagem no conjunto de validação (frases novas, escritas depois do ajuste das regras), rótulo: regras_validacao, ANTES das correções de segurança
+frases: 40
+serviço: 90.0%
+especialidade: 76.9% (20/26)
+urgência exata: 65.0%
+urgência ±1 nível: 92.5%
+recall do vermelho: 83.3% (5/6)
+falsos vermelhos: 1
+caminhos usados: {'regras': 34, 'red_flag': 6}
+
+Falhas de segurança encontradas nesta execução:
+  #27 'meu vizinho caiu na rua e está desacordado': esperado vermelho, obtido verde
+      causa: o anonimizador tratou "rua e está desacordado" como endereço e apagou o sinal de emergência antes do detector de red flags.
+  #26 'não tenho dor no peito nem falta de ar só quero fazer um check-up': esperado azul, obtido vermelho
+      causa: o detector não entende negação ("não tenho dor no peito").
+
+Demais erros de urgência e especialidade:
+  urgência #1 'caí da bicicleta e o pulso está inchado e dói muito': esperado amarelo, obtido verde
+  especialidade #1 'caí da bicicleta e o pulso está inchado e dói muito': esperado 225270, obtido 225125
+  urgência #3 'dor nas costas há meses que piora quando fico sentado': esperado verde, obtido azul
+  urgência #7 'estou com 30 semanas de gravidez e sinto dor de cabeça forte e vejo luzes': esperado laranja, obtido verde
+  urgência #10 'sinto o peito apertado quando faço esforço': esperado amarelo, obtido verde
+  especialidade #10 'sinto o peito apertado quando faço esforço': esperado 225120, obtido 225125
+  urgência #11 'minha pressão está sempre alta 18 por 10': esperado amarelo, obtido verde
+  especialidade #11 'minha pressão está sempre alta 18 por 10': esperado 225120, obtido 225125
+  urgência #13 'visão embaçada e vejo moscas voando': esperado amarelo, obtido verde
+  urgência #15 'dor de garganta forte e amígdalas com placas': esperado amarelo, obtido verde
+  especialidade #18 'estou sem dormir há semanas muito angustiado e chorando à toa': esperado 225133, obtido 225125
+  urgência #24 'to com febre e diarreia faz dois dias': esperado amarelo, obtido verde
+  especialidade #25 'quero renovar a receita do remédio de pressão': esperado 225125, obtido 225130
+  urgência #36 'preciso de ajuda para pagar o aluguel estou desempregado': esperado amarelo, obtido verde
+  urgência #38 'faltou comida e as crianças estão com fome': esperado amarelo, obtido verde
+  urgência #39 'preciso de vaga em creche para meu filho': esperado azul, obtido verde
+  urgência #40 'preciso de cadastro para receber auxílio do governo': esperado azul, obtido verde
+(serviço também errou em #36, #38, #39 e #40: assistência social classificada como saúde)

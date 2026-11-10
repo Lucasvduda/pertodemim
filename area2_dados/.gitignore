@@ -1,0 +1,6 @@
+# gerados pelo ETL / gerador; reproduzíveis com gerar_dados_exemplo.py + etl.py
+bronze/
+silver/
+gold/
+__pycache__/
+.pytest_cache/
