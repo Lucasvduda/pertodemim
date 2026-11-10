@@ -1,0 +1,3 @@
+﻿2026-11-10T20:45:50.792-03:00 INFO 9524 --- [pertodemim-api] [ main] br.com.pertodemim.triagem.LlmConfig : Triagem com LLM 'gemini' (modelo gemini-3.1-flash-lite), com fallback por regras.
+2026-11-10T20:45:51.730-03:00 INFO 9524 --- [pertodemim-api] [ main] b.com.pertodemim.PertoDeMimApplication : Started PertoDeMimApplication in 6.424 seconds (process running for 6.852)
+2026-11-10T20:46:52.441-03:00 WARN 9524 --- [pertodemim-api] [io-8080-exec-10] b.c.p.triagem.OpenAiCompatProvider : LLM gemini: falha (ServiceUnavailable); usando regras

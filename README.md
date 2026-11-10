@@ -68,7 +68,7 @@ cd area1_ia && python avaliar_triagem.py --api http://localhost:8080 --rotulo re
 python simulacao_impacto.py
 ```
 
-Leitura honesta dos números de avaliação: as regras foram ajustadas depois de conhecer as 40 frases do conjunto ouro, então o resultado delas nesse conjunto é otimista. A primeira execução, antes do ajuste, está em `area1_ia/resultados/conjunto_ouro_regras_1a_execucao.txt`. Por isso existe um segundo conjunto, `area1_ia/frases_validacao.csv` (40 frases novas, escritas depois do ajuste): a primeira execução nele achou duas falhas de segurança, já corrigidas e com teste (a anonimização apagava "rua e está desacordado" como se fosse endereço, e "não tenho dor no peito" disparava emergência). O registro está em `area1_ia/resultados/conjunto_validacao_1a_execucao_antes_das_correcoes.txt`. Depois das correções esse conjunto deixou de ser independente. O resultado com LLM só existe depois de rodar `area1_ia/avaliar_triagem.py` com um provedor configurado (`openai`, `groq`, `gemini` ou `ollama`); o script falha se nenhuma frase for respondida pelo LLM, para não confundir com o resultado das regras.
+Leitura honesta dos números de avaliação: as regras foram ajustadas depois de conhecer as 40 frases do conjunto ouro, então o resultado delas nesse conjunto é otimista. A primeira execução, antes do ajuste, está em `area1_ia/resultados/conjunto_ouro_regras_1a_execucao.txt`. Por isso existe um segundo conjunto, `area1_ia/frases_validacao.csv` (40 frases novas, escritas depois do ajuste): a primeira execução nele achou duas falhas de segurança, já corrigidas e com teste (a anonimização apagava "rua e está desacordado" como se fosse endereço, e "não tenho dor no peito" disparava emergência). O registro está em `area1_ia/resultados/conjunto_validacao_1a_execucao_antes_das_correcoes.txt`. Depois das correções esse conjunto deixou de ser independente. O resultado com LLM vem de rodar `area1_ia/avaliar_triagem.py` com um provedor configurado (`openai`, `groq`, `gemini` ou `ollama`); o script falha se nenhuma frase for respondida pelo LLM, para não confundir com o resultado das regras. Já foi feito com o Gemini (plano gratuito): ver `area1_ia/resultados/RESUMO_LLM_REAL.md` e `area1_ia/demo_llm.py`.
 
 ## Dados e dashboard
 
@@ -132,7 +132,8 @@ JWT sem estado com BCrypt, cabeçalhos CSP/Referrer-Policy/X-Frame-Options, limi
 - O limite de requisições é em memória, por instância.
 - O H2 em memória perde os dados ao reiniciar (há driver PostgreSQL opcional por variáveis `SPRING_DATASOURCE_*`).
 - A triagem não substitui avaliação médica; o app diz isso na interface.
-- Docker e chamada real a LLM não foram testados (ver acima).
+- Docker não foi testado (não há Docker na máquina de desenvolvimento).
+- A chamada real a LLM foi feita com o Gemini do plano gratuito (cota pequena: várias frases caíram no fallback por regras nas primeiras execuções). Só a melhor execução (31 de 40 frases pelo LLM) mede o modelo: serviço 100%, urgência exata 75%, 4 falsos vermelhos (excesso de cautela, acima do limite de 1). Detalhes e todas as execuções em `area1_ia/resultados/RESUMO_LLM_REAL.md`.
 
 ## Uso de IA generativa
 

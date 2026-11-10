@@ -1,0 +1,17 @@
+Avaliação da triagem no conjunto ouro, rótulo: gemini
+frases: 40
+serviço: 100.0%
+especialidade: 100.0% (26/26)
+urgência exata: 87.5%
+urgência ±1 nível: 97.5%
+recall do vermelho: 100.0% (8/8)
+falsos vermelhos: 1
+caminhos usados: {'llm': 3, 'fallback': 29, 'red_flag': 8}
+limites mínimos: todos atingidos
+
+Erros de urgência e especialidade:
+  urgência #1 'quebrei a perna jogando bola': esperado laranja, obtido vermelho
+  urgência #11 'atraso menstrual e dor forte na barriga': esperado amarelo, obtido laranja
+  urgência #16 'nariz entupido e sinusite faz meses': esperado verde, obtido azul
+  urgência #22 'dor de cabeça forte que não passa há dias com tontura': esperado amarelo, obtido laranja
+  urgência #40 'preciso de cesta básica para a família': esperado amarelo, obtido azul

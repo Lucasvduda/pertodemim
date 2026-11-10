@@ -1,0 +1,19 @@
+Avaliação da triagem no conjunto ouro, rótulo: gemini
+frases: 40
+serviço: 100.0%
+especialidade: 96.2% (25/26)
+urgência exata: 85.0%
+urgência ±1 nível: 100.0%
+recall do vermelho: 100.0% (8/8)
+falsos vermelhos: 0
+caminhos usados: {'llm': 17, 'fallback': 15, 'red_flag': 8}
+limites mínimos: todos atingidos
+
+Erros de urgência e especialidade:
+  urgência #11 'atraso menstrual e dor forte na barriga': esperado amarelo, obtido laranja
+  urgência #14 'não enxergo bem de longe preciso de óculos': esperado verde, obtido azul
+  urgência #23 'to c febre e dor no corpo': esperado amarelo, obtido verde
+  especialidade #24 'tô com gripe e tosse': esperado 225125, obtido 225130
+  urgência #25 'dor de barriga e enjoo desde ontem': esperado amarelo, obtido verde
+  urgência #37 'estou sem comida em casa e sem renda preciso de ajuda': esperado amarelo, obtido verde
+  urgência #40 'preciso de cesta básica para a família': esperado amarelo, obtido verde

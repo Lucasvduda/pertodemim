@@ -84,7 +84,7 @@ def relatorio(resultados: list[dict]) -> str:
         if c:
             L.append(f"Cobertura Jacoco ({r['nome']}): instruções {c['instruction']:.1f}%, linhas {c['line']:.1f}%, ramos {c['branch']:.1f}%")
     L += ["", "Observação: a cobertura é da API Java. As partes em Python têm testes, mas a cobertura delas não é medida aqui.",
-          "Não testado nesta verificação: construção das imagens Docker e chamada real a um provedor de LLM (exigem Docker e chave)."]
+          "Não testado nesta verificação: construção das imagens Docker (exige Docker). A chamada real a um LLM exige chave e é feita à parte: area1_ia/resultados/RESUMO_LLM_REAL.md."]
     return "\n".join(L) + "\n"
 
 

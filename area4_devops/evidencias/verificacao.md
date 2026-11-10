@@ -1,4 +1,4 @@
-# Verificação completa (10/11/2026 18:06)
+# Verificação completa (10/11/2026 20:56)
 
 | Suíte | Resultado | Testes | Falhas | Erros |
 |---|---|---|---|---|
@@ -13,4 +13,4 @@
 Cobertura Jacoco (API Java (mvn verify)): instruções 95.2%, linhas 94.8%, ramos 84.9%
 
 Observação: a cobertura é da API Java. As partes em Python têm testes, mas a cobertura delas não é medida aqui.
-Não testado nesta verificação: construção das imagens Docker e chamada real a um provedor de LLM (exigem Docker e chave).
+Não testado nesta verificação: construção das imagens Docker (exige Docker). A chamada real a um LLM exige chave e é feita à parte: area1_ia/resultados/RESUMO_LLM_REAL.md.

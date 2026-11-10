@@ -1,0 +1,41 @@
+id,texto,esperado_servico,obtido_servico,esperado_cbo,obtido_cbo,esperado_urgencia,obtida_urgencia,caminho
+1,quebrei a perna jogando bola,saude,saude,225270,225270,laranja,vermelho,llm
+2,cai da escada e meu braço ta torto axo q quebrou,saude,saude,225270,225270,laranja,vermelho,llm
+3,torci o tornozelo e tá muito inchado,saude,saude,225270,225270,amarelo,amarelo,llm
+4,dor no joelho faz semanas quando subo escada,saude,saude,225270,225270,verde,verde,llm
+5,minha filha de 5 anos está com tosse e coriza,saude,saude,225124,225124,verde,verde,llm
+6,meu fio ta c febre alta desde ontem,saude,saude,225124,225124,amarelo,amarelo,fallback
+7,criança vomitando e com diarreia há dois dias,saude,saude,225124,225124,amarelo,amarelo,llm
+8,preciso levar meu filho para tomar vacina,saude,saude,225124,225124,azul,azul,llm
+9,estou grávida de 8 semanas e quero começar o pré-natal,saude,saude,225250,225250,verde,verde,llm
+10,quero fazer o preventivo,saude,saude,225250,225250,azul,azul,llm
+11,atraso menstrual e dor forte na barriga,saude,saude,225250,225250,amarelo,vermelho,llm
+12,meu coração dispara quando subo escada,saude,saude,225120,225120,amarelo,amarelo,llm
+13,introu cisco no olho e está vermelho e ardendo,saude,saude,225265,225265,amarelo,vermelho,llm
+14,não enxergo bem de longe preciso de óculos,saude,saude,225265,225265,verde,verde,llm
+15,dor de ouvido forte e saindo secreção,saude,saude,225275,225275,amarelo,amarelo,llm
+16,nariz entupido e sinusite faz meses,saude,saude,225275,225275,verde,verde,llm
+17,manchas vermelhas na pele coçando muito,saude,saude,225135,225135,verde,verde,llm
+18,tenho uma pinta que cresceu e sangra,saude,saude,225135,225135,amarelo,amarelo,llm
+19,estou muito ansioso e não consigo dormir faz um mês,saude,saude,225133,225133,verde,amarelo,llm
+20,me sinto muito triste e sem vontade de nada,saude,saude,225133,225133,verde,amarelo,llm
+21,dor ao urinar e vontade toda hora,saude,saude,225285,225285,amarelo,amarelo,llm
+22,dor de cabeça forte que não passa há dias com tontura,saude,saude,225112,225125,amarelo,laranja,llm
+23,to c febre e dor no corpo,saude,saude,225125,225125,amarelo,verde,llm
+24,tô com gripe e tosse,saude,saude,225125,225125,verde,verde,llm
+25,dor de barriga e enjoo desde ontem,saude,saude,225125,225125,amarelo,verde,llm
+26,quero fazer exames de rotina e check-up,saude,saude,225130,225125,azul,azul,llm
+27,meu pai está com dor no peito e suor frio,saude,saude,,,vermelho,vermelho,red_flag
+28,ele desmaiou e não acorda,saude,saude,,,vermelho,vermelho,red_flag
+29,não consigo respirar direito,saude,saude,,,vermelho,vermelho,red_flag
+30,minha mãe está com a boca torta e fala enrolada,saude,saude,,,vermelho,vermelho,red_flag
+31,estou sangrando muito e não para,saude,saude,,,vermelho,vermelho,red_flag
+32,quero me matar,saude,saude,,,vermelho,vermelho,red_flag
+33,meu filho engasgou e está roxo,saude,saude,,,vermelho,vermelho,red_flag
+34,tive uma convulsão agora,saude,saude,,,vermelho,vermelho,red_flag
+35,perdi meu RG e preciso da segunda via,documento,documento,,,azul,azul,llm
+36,preciso tirar o cartão SUS,documento,documento,,,azul,azul,llm
+37,estou sem comida em casa e sem renda preciso de ajuda,assistencia_social,assistencia_social,,,amarelo,amarelo,llm
+38,quero me cadastrar no CadÚnico para o Bolsa Família,assistencia_social,assistencia_social,,,azul,azul,llm
+39,preciso de uma certidão de nascimento,documento,documento,,,azul,azul,llm
+40,preciso de cesta básica para a família,assistencia_social,assistencia_social,,,amarelo,verde,llm

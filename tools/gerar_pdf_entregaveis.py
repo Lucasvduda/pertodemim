@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import base64
 import html
+import json
 import re
 import subprocess
 import sys
@@ -124,6 +125,34 @@ def resultado(nome: str) -> str:
     return f"<pre>{html.escape(arq.read_text(encoding='utf-8'))}</pre>" if arq.exists() else "<div class='preencher'>Falta " + nome + "</div>"
 
 
+def llm_real() -> str:
+    """Seção com a execução real contra um LLM (Gemini, plano gratuito), lida dos arquivos de resultado."""
+    pasta = RAIZ / "area1_ia" / "resultados"
+    demo = pasta / "demo_llm_real.json"
+    if not demo.exists():
+        return "<div class='preencher'>Falta area1_ia/resultados/demo_llm_real.json (python area1_ia/demo_llm.py).</div>"
+    d = json.loads(demo.read_text(encoding="utf-8"))
+    linhas = []
+    for i in d["itens"]:
+        s = i["saida"]
+        linhas.append(f"<tr><td>{html.escape(i['entrada'])}</td><td>{html.escape(str(s.get('caminho')))}</td>"
+                      f"<td>{html.escape(str(s.get('servico')))} / {html.escape(str(s.get('especialidade')))}</td>"
+                      f"<td>{html.escape(str(s.get('urgencia')))}</td><td>{html.escape(str(s.get('orientacao'))[:160])}</td></tr>")
+    tentativa = pasta / "conjunto_ouro_gemini_3-1-flash-lite.txt"
+    log = pasta / "log_api_llm_real_gemini-3-1-flash-lite.txt"
+    resumo = pasta / "RESUMO_LLM_REAL.md"
+    return f"""
+<h3>3.5 Execução com LLM real (Gemini, plano gratuito)</h3>
+{md(resumo.read_text(encoding="utf-8")) if resumo.exists() else ""}
+<p><b>Demonstração (entrada e saída reais, modelo {html.escape(d['rotulo'])}, executada em {html.escape(d['executado_em'])}):</b></p>
+<table><tr><th>Entrada</th><th>Caminho</th><th>Serviço / especialidade</th><th>Urgência</th><th>Orientação (início)</th></tr>{''.join(linhas)}</table>
+<p><b>Conjunto ouro com o LLM (melhor execução completa, 31 de 40 frases respondidas pelo LLM e 8 pelo detector de emergência):</b></p>
+<pre>{html.escape(tentativa.read_text(encoding="utf-8")) if tentativa.exists() else ""}</pre>
+<p><b>Log da API nessa execução:</b></p>
+<pre>{html.escape(log.read_text(encoding="utf-8-sig")) if log.exists() else ""}</pre>
+"""
+
+
 def montar() -> str:
     simul = md(ler("area1_ia/resultados/simulacao_impacto.md"))
     plano = md(ler("area4_devops/PLANO_DE_TESTES.md"))
@@ -188,8 +217,7 @@ e oferece o serviço e (profissional presente com check-in &lt; 4 h ou agenda ab
 {resultado('conjunto_validacao_1a_execucao_antes_das_correcoes.txt')}
 <p>Resultado depois das correções (regras): serviço 100%, especialidade 80,8% (21/26), urgência exata 80,0%, urgência ±1 nível 97,5%, recall do vermelho 100% (6/6), 0 falsos vermelhos.
 Esse conjunto deixou de ser independente depois das correções.</p>
-<div class='preencher'><b>PREENCHER (quando houver chave válida):</b> resultado com LLM real (<code>python area1_ia/avaliar_triagem.py --rotulo openai</code>, ou groq/gemini/ollama) e comparação com as regras.
-Até lá, o ganho medido é o das regras; nenhuma chamada real a LLM foi concluída com sucesso.</div>
+{llm_real()}
 <p><b>Antes e depois (impacto no cidadão), por simulação:</b></p>
 {simul}
 
@@ -255,7 +283,8 @@ Os arquivos foram escritos e revisados, mas a construção das imagens e a execu
 
 <h2>7. Limitações declaradas</h2>
 <ul><li>Fila, presença, conexão, demanda, catálogo de especialidades por unidade e impacto são simulados; unidades e coordenadas são reais (CNES).</li>
-<li>Docker, GitHub Actions e chamada real a LLM ainda não foram executados com sucesso (ver caixas "PREENCHER").</li>
+<li>Docker e GitHub Actions ainda não foram executados com sucesso (ver caixas "PREENCHER").</li>
+<li>A chamada real a LLM foi feita com o Gemini gratuito, de cota pequena: só 31 de 40 frases da melhor execução vieram do LLM, e o resultado ficou abaixo do limite de falsos vermelhos (seção 3.5).</li>
 <li>As regras foram ajustadas no conjunto ouro; o conjunto de validação deixou de ser independente depois das correções.</li>
 <li>A checagem de capacidade do agendamento não é atômica, o limite de requisições é em memória e o H2 perde dados ao reiniciar (há suporte a PostgreSQL).</li>
 <li>A triagem não substitui avaliação médica, e o app diz isso na interface.</li></ul>
