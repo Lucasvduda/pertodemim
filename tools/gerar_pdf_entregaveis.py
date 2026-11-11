@@ -263,14 +263,15 @@ painel da unidade (sensores) → agendamento (protocolo gerado) → "Meus agenda
 <h2 class='quebra'>6. Área 4: DevOps, segurança e qualidade</h2>
 <h3>6.1 Organização e versionamento</h3>
 <p>Módulos por área (<code>area1_ia</code>, <code>area2_dados</code>, <code>area3_mvp</code>, <code>area4_devops</code>), um README de execução e versionamento com Git (histórico de commits do repositório).</p>
-<div class='preencher'><b>PREENCHER:</b> print do histórico do Git (<code>git log --oneline</code> ou a página de commits no GitHub).</div>
+<p>Repositório: <code>https://github.com/Lucasvduda/pertodemim</code></p>
+{img('git_historico_commits.png', 'Histórico de commits no GitHub (branch master), com os 6 checks do CI aprovados no último commit.', '70%')}
 <h3>6.2 DevOps: Docker e CI/CD</h3>
 <p>Dockerfile multi-stage da API, imagem Python única para simulador, gerador, ETL e dashboard, <code>docker-compose.yml</code> com perfis e workflow do GitHub Actions
 (testes da API com cobertura, testes Python por área e build das imagens). Arquivos abaixo.</p>
 <pre>{ci}</pre>
 <pre>{dockerfile}</pre>
-<div class='preencher'><b>PREENCHER (evidência de execução):</b> print da aba Actions do GitHub com o workflow <code>ci</code> verde, e/ou saída de <code>docker compose up --build</code>.
-Os arquivos foram escritos e revisados, mas a construção das imagens e a execução do workflow ainda não foram feitas pelo grupo (sem Docker no ambiente de desenvolvimento).</div>
+{img('ci_github_actions_verde.png', 'Workflow ci no GitHub Actions: 6 jobs aprovados (testes da API com Maven e Jacoco, testes Python das 4 áreas e build das imagens Docker).', '75%')}
+<p>A execução do workflow no GitHub (Linux) comprova o build das duas imagens Docker. O <code>docker compose up</code> completo não foi executado na máquina de desenvolvimento (sem Docker local).</p>
 <details><summary>docker-compose.yml</summary><pre>{compose}</pre></details>
 <h3>6.3 Segurança (mais de 2 práticas)</h3>
 {seguranca}
@@ -283,7 +284,7 @@ Os arquivos foram escritos e revisados, mas a construção das imagens e a execu
 
 <h2>7. Limitações declaradas</h2>
 <ul><li>Fila, presença, conexão, demanda, catálogo de especialidades por unidade e impacto são simulados; unidades e coordenadas são reais (CNES).</li>
-<li>Docker e GitHub Actions ainda não foram executados com sucesso (ver caixas "PREENCHER").</li>
+<li>O build das imagens Docker foi comprovado só pelo GitHub Actions; o <code>docker compose up</code> não foi executado localmente.</li>
 <li>A chamada real a LLM foi feita com o Gemini gratuito, de cota pequena: só 31 de 40 frases da melhor execução vieram do LLM, e o resultado ficou abaixo do limite de falsos vermelhos (seção 3.5).</li>
 <li>As regras foram ajustadas no conjunto ouro; o conjunto de validação deixou de ser independente depois das correções.</li>
 <li>A checagem de capacidade do agendamento não é atômica, o limite de requisições é em memória e o H2 perde dados ao reiniciar (há suporte a PostgreSQL).</li>

@@ -132,7 +132,7 @@ JWT sem estado com BCrypt, cabeçalhos CSP/Referrer-Policy/X-Frame-Options, limi
 - O limite de requisições é em memória, por instância.
 - O H2 em memória perde os dados ao reiniciar (há driver PostgreSQL opcional por variáveis `SPRING_DATASOURCE_*`).
 - A triagem não substitui avaliação médica; o app diz isso na interface.
-- Docker não foi testado (não há Docker na máquina de desenvolvimento).
+- O build das imagens Docker foi comprovado só pelo GitHub Actions (job "Docker", aprovado); o `docker compose up` não foi executado localmente (não há Docker na máquina de desenvolvimento).
 - A chamada real a LLM foi feita com o Gemini do plano gratuito (cota pequena: várias frases caíram no fallback por regras nas primeiras execuções). Só a melhor execução (31 de 40 frases pelo LLM) mede o modelo: serviço 100%, urgência exata 75%, 4 falsos vermelhos (excesso de cautela, acima do limite de 1). Detalhes e todas as execuções em `area1_ia/resultados/RESUMO_LLM_REAL.md`.
 
 ## Uso de IA generativa
